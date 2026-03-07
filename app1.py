@@ -1,6 +1,8 @@
 import streamlit as st
 import joblib
 import numpy as np
+import sklearn
+st.write("Sklearn version:", sklearn.__version__)
 
 # ================== PAGE CONFIG ==================
 st.set_page_config(
@@ -135,4 +137,5 @@ if st.button("🚀 Predict Power Generation", use_container_width=True):
 # ================== FOOTER ==================
 st.write("")
 st.caption("📊 Machine Learning Model | Streamlit Dashboard")
+
 
