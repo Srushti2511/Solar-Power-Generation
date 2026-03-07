@@ -145,5 +145,13 @@ if st.button("🚀 Predict Power Generation", use_container_width=True):
 st.write("")
 st.caption("📊 Machine Learning Model | Streamlit Dashboard")
 
+import traceback
+import joblib
+
+try:
+    model = joblib.load("solar_pipeline.pkl")
+except Exception as e:
+    import streamlit as st
+    st.write(traceback.format_exc())
 
 
