@@ -1,1 +1,4 @@
+import joblib
+joblib.dump(pipeline, "solar_pipeline.pkl")
+
 
