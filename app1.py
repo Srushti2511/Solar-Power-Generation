@@ -10,8 +10,7 @@ st.set_page_config(
 )
 
 # ================== LOAD MODEL ==================
-model = joblib.load(r"C:\Users\Shrushti\Desktop\solar1\solar_pipeline.pkl")
-
+model = joblib.load("solar_pipeline.pkl")
 # ================== CUSTOM CSS ==================
 st.markdown("""
 <style>
@@ -136,3 +135,4 @@ if st.button("🚀 Predict Power Generation", use_container_width=True):
 # ================== FOOTER ==================
 st.write("")
 st.caption("📊 Machine Learning Model | Streamlit Dashboard")
+
