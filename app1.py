@@ -4,6 +4,7 @@ import numpy as np
 import sklearn
 st.write("Sklearn version:", sklearn.__version__)
 
+
 # ================== PAGE CONFIG ==================
 st.set_page_config(
     page_title="Solar Power Generation Predictor",
@@ -12,7 +13,13 @@ st.set_page_config(
 )
 
 # ================== LOAD MODEL ==================
-model = joblib.load("solar_pipeline.pkl")
+import joblib
+
+@st.cache_resource
+def load_model():
+    return joblib.load("solar_pipeline.pkl")
+
+model = load_model()
 # ================== CUSTOM CSS ==================
 st.markdown("""
 <style>
@@ -137,5 +144,6 @@ if st.button("🚀 Predict Power Generation", use_container_width=True):
 # ================== FOOTER ==================
 st.write("")
 st.caption("📊 Machine Learning Model | Streamlit Dashboard")
+
 
 
